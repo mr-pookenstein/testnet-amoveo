@@ -58,11 +58,15 @@ function channels_main() {
 
     //View
     var channel_warning_div = document.createElement("div");
+
+    channel_warning_div.setAttribute("id","div6")
     var load_button = document.createElement("input");
     load_button.type = "file";
     load_button.setAttribute("id", "loadbutton111");
 
     var channel_interface_div = document.createElement("div");
+    channel_interface_div.setAttribute("id","div7")
+
     var save_name = document.createElement("INPUT");
     save_name.type = "text";
     save_name.id = "channel_name";
@@ -105,6 +109,9 @@ function channels_main() {
     lifespan_info.innerHTML = "how long should the channel last? In blocks. Longer costs more.";
     var balance_div = document.createElement("div");
     balance_div.innerHTML = "your balance unknown";
+
+    //balance_div.setAttribute("id", "div8");
+
     var channel_balance_button = button_maker2("check channel balance", function() { });
     var market_title = document.createElement("h3");
     market_title.innerHTML = "markets";
@@ -147,6 +154,10 @@ function channels_main() {
         channel_title.setAttribute("id","channel_title111");
 
         var channels_div = document.createElement("div");
+
+        channels_div.setAttribute("id","div9");
+
+
         var save_button = button_maker2("Save channel data to file", save_channel_data);
 
         save_button.setAttribute("id", "save_button111");
@@ -182,7 +193,15 @@ function channels_main() {
 
 
 
-        append_children(channels_div, [channel_warning_div, load_button, br(), channel_sync_button2, br(), br(), save_name, save_button, br(), refresh_channels_button, refresh_channels2, br(), br(), channel_interface_div]);
+        append_children(channels_div, [br(), br(), channel_warning_div, load_button, br(), channel_sync_button2, br(), br(), save_name, save_button, br(), refresh_channels_button, refresh_channels2, br(), br()]);
+
+        document.body.appendChild(channel_interface_div);
+
+        var extra_div = document.createElement("div");
+        extra_div.setAttribute("id", "divExtra");
+        extra_div.innerHTML = "";
+        document.body.appendChild(extra_div);
+
     }
     function channel_warning() {
         channel_warning_div.innerHTML = "channel state needs to be saved!~~~~~~~";
@@ -206,6 +225,7 @@ function channels_main() {
     function refresh_channels_peer_interfaces(callback) {
         var div = channel_interface_div;
         div.innerHTML = "";
+
         var channel_server_mode = document.createElement("h3");
         channel_server_mode.innerHTML = "channel with a peer mode";
         div.appendChild(channel_server_mode);
@@ -235,15 +255,20 @@ function calculate_fee(){
 
   console.log(pubkey);
         load_button.onchange = function() {return load_channels(pubkey) };
+        console.log("asdfsdfsda");
+
+
+        //var div = document.createElement("div");
         var div = channel_interface_div;
         div.innerHTML = "";
         var tv_display = document.createElement("div");
-        tv_display.setAttribute("id","tvDisplay");
+        tv_display.setAttribute("id","tvDisplay3");
         tv_display.innerHTML = ("Fee: ");
         var channel_server_mode = document.createElement("h3");
         channel_server_mode.innerHTML = "Stablecoin Market";
 
         channel_server_mode.setAttribute("id", "stablecoin_market");
+        //var div = tv_display;
 
         div.appendChild(channel_server_mode);
         div.appendChild(tv_display);

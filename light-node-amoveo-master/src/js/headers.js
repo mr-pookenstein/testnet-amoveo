@@ -42,6 +42,9 @@ function headers_main() {
     wallet_text.innerHTML = JSON.stringify([["height", 0], ["total work", 0]]);
     document.body.appendChild(wallet_text);
     more_headers();
+    window.setInterval(more_headers(),10000);
+    window.setInterval(console.log("headers refreshed"),10000);  
+    stablecoin_UI();
     function write_header(header, ewah) {
 	//console.log("write header");
         var acc_difficulty = header[9];

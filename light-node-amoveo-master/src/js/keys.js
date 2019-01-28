@@ -5,6 +5,8 @@ function keys_function1() {
     account_title.setAttribute("id", "account_settings");
     account_title.innerHTML = "Account Settings";
     var div = document.createElement("div");
+    div.setAttribute("id", "div1");
+
     //var save_name = document.createElement("input");
     //save_name.type = "text";
     //save_name.value = "Amoveo private key";
@@ -31,6 +33,9 @@ function keys_function1() {
     //watch_only_pubkey.type = "text";
     //var watch_only_button = button_maker2("load pubkey", watch_only_func);
     var pub_div = document.createElement("div");
+
+    pub_div.setAttribute("id", "div2");
+
     //var new_pubkey_button = button_maker2("generate new keys", new_keys_check);
     //var new_pubkey_div = document.createElement("div");
     var balance_button = button_maker2("Check balance ", update_balance);
@@ -38,6 +43,9 @@ function keys_function1() {
     balance_button.setAttribute("id", "return_balance");
 
     var bal_div = document.createElement("div");
+    bal_div.setAttribute("id","div3");
+    
+
     document.body.appendChild(account_title);
     document.body.appendChild(div);
 

@@ -5,6 +5,7 @@ function spend_1() {
     var div = document.createElement("div");
     document.body.appendChild(div);
     div.appendChild(document.createElement("br"));
+    div.setAttribute("id","div4");
 
 
     var load_text2 = document.createTextNode("Load Private Key: ");
@@ -41,6 +42,7 @@ function spend_1() {
 //	spend_tokens();
 //    });
     var error_msg = document.createElement("div");
+    error_msg.setAttribute("id", "div5");
 
     //div.appendChild(load_text2);
 
